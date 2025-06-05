@@ -63,6 +63,7 @@ class _FormHandlerState extends State<FormHandler> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     final List<Widget> steps = [
       Generalinfo(
         key: const ValueKey('generalinfo'),
@@ -158,6 +159,27 @@ class _FormHandlerState extends State<FormHandler> {
                                 ? Theme.of(context).primaryColor
                                 : Colors.grey,
                       ),
+                      ElevatedButton.icon(
+                        icon: const Icon(Icons.close, color: Colors.white),
+                        label: const Text("Close Application"),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: theme.primaryColor,
+                          foregroundColor: theme.colorScheme.onPrimary,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 24,
+                            vertical: 10,
+                          ),
+                          textStyle: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        onPressed: () {
+                          exit(
+                            0,
+                          ); // This will close the app on desktop. On mobile, it will just pop the app.
+                        },
+                      ),
                       if (_currentStep < _totalSteps - 1)
                         IconButton(
                           onPressed:
@@ -208,28 +230,6 @@ class _FormHandlerState extends State<FormHandler> {
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
-                      const SizedBox(height: 10),
-                      ElevatedButton.icon(
-                        icon: const Icon(Icons.close),
-                        label: const Text("Close Application"),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 24,
-                            vertical: 10,
-                          ),
-                          textStyle: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        onPressed: () {
-                          exit(
-                            0,
-                          ); // This will close the app on desktop. On mobile, it will just pop the app.
-                        },
-                      ),
                     ],
                   ),
                 ),
