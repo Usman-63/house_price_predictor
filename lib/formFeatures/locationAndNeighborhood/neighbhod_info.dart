@@ -1,0 +1,58 @@
+Map<String, Map<String, dynamic>> neighborhoodFeatureMap = {
+  'Neighborhood': neighborhoodOptions,
+  'Condition 1': condition1Options,
+  'Condition 2': condition2Options,
+};
+
+final Map<String, String> neighborhoodOptions = {
+  'North Ames': 'NAmes',
+  'Gilbert': 'Gilbert',
+  'Stone Brook': 'StoneBr',
+  'Northwest Ames': 'NWAmes',
+  'Somerset': 'Somerst',
+  'Briardale': 'BrDale',
+  'Northpark Villa': 'NPkVill',
+  'Northridge Heights': 'NridgHt',
+  'Bloomington Heights': 'Blmngtn',
+  'Northridge': 'NoRidge',
+  'Sawyer West': 'SawyerW',
+  'Sawyer': 'Sawyer',
+  'Greens': 'Greens',
+  'Brookside': 'BrkSide',
+  'Old Town': 'OldTown',
+  'Iowa DOT and Rail Road': 'IDOTRR',
+  'Clear Creek': 'ClearCr',
+  'South & West of Iowa State University': 'SWISU',
+  'Edwards': 'Edwards',
+  'College Creek': 'CollgCr',
+  'Crawford': 'Crawfor',
+  'Bluestem': 'Blueste',
+  'Mitchell': 'Mitchel',
+  'Timberland': 'Timber',
+  'Meadow Village': 'MeadowV',
+  'Veenker': 'Veenker',
+  'Green Hills': 'GrnHill',
+  'Landmark': 'Landmrk',
+};
+final Map<String, String> condition1Options = {
+  'Normal': 'Norm',
+  'Feedr (Adjacent to Feeder Street)': 'Feedr',
+  'Near Positive Feature (e.g. Park)': 'PosN',
+  'Near Railroad (Northeast)': 'RRNe',
+  'Adjacent to Railroad (East)': 'RRAe',
+  'Adjacent to Arterial Street': 'Artery',
+  'Adjacent to Positive Feature (e.g. Park)': 'PosA',
+  'Adjacent to Railroad (North)': 'RRAn',
+  'Near Railroad (North)': 'RRNn',
+};
+
+final Map<String, String> condition2Options = {
+  'Normal': 'Norm',
+  'Feedr (Adjacent to Feeder Street)': 'Feedr',
+  'Adjacent to Positive Feature (e.g. Park)': 'PosA',
+  'Near Positive Feature (e.g. Park)': 'PosN',
+  'Adjacent to Arterial Street': 'Artery',
+  'Near Railroad (North)': 'RRNn',
+  'Adjacent to Railroad (East)': 'RRAe',
+  'Adjacent to Railroad (North)': 'RRAn',
+};
