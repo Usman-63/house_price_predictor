@@ -170,74 +170,76 @@ class _ResultPageState extends State<ResultPage>
                           ),
                         ),
                       ),
-                      secondChild: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            Icons.bar_chart_rounded,
-                            size: 60,
-                            color: theme.colorScheme.secondary,
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            "Estimated House Price",
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: theme.colorScheme.primary,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            _formatCurrency(prediction),
-                            style: theme.textTheme.displaySmall?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: theme.colorScheme.secondary,
-                              fontSize: 28,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(height: 18),
-                          Text(
-                            "Top Feature Importances",
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              fontWeight: FontWeight.bold,
+                      secondChild: SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.bar_chart_rounded,
+                              size: 60,
                               color: theme.colorScheme.secondary,
                             ),
-                          ),
-                          const SizedBox(height: 18),
-                          _FeatureImportanceChart(features: topFeatures),
-                          const SizedBox(height: 28),
-                          ElevatedButton.icon(
-                            icon: const Icon(
-                              Icons.expand_less,
-                              color: Colors.white,
-                            ),
-                            label: const Text("Hide Details"),
-                            onPressed: () {
-                              setState(() {
-                                showDetails = false;
-                              });
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: theme.colorScheme.secondary,
-                              foregroundColor: theme.colorScheme.onSecondary,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 32,
-                                vertical: 14,
+                            const SizedBox(height: 8),
+                            Text(
+                              "Estimated House Price",
+                              style: theme.textTheme.titleMedium?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: theme.colorScheme.primary,
                               ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              _formatCurrency(prediction),
+                              style: theme.textTheme.displaySmall?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: theme.colorScheme.secondary,
+                                fontSize: 28,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 18),
+                            Text(
+                              "Top Feature Importances",
+                              style: theme.textTheme.titleMedium?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: theme.colorScheme.secondary,
                               ),
                             ),
-                          ),
-                          const SizedBox(height: 14),
-                          TextButton.icon(
-                            icon: const Icon(Icons.arrow_back),
-                            label: const Text("Back"),
-                            onPressed: () => Navigator.pop(context),
-                          ),
-                        ],
+                            const SizedBox(height: 18),
+                            _FeatureImportanceChart(features: topFeatures),
+                            const SizedBox(height: 28),
+                            ElevatedButton.icon(
+                              icon: const Icon(
+                                Icons.expand_less,
+                                color: Colors.white,
+                              ),
+                              label: const Text("Hide Details"),
+                              onPressed: () {
+                                setState(() {
+                                  showDetails = false;
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: theme.colorScheme.secondary,
+                                foregroundColor: theme.colorScheme.onSecondary,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 32,
+                                  vertical: 14,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 14),
+                            TextButton.icon(
+                              icon: const Icon(Icons.arrow_back),
+                              label: const Text("Back"),
+                              onPressed: () => Navigator.pop(context),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
