@@ -40,6 +40,15 @@ class _ResultPageState extends State<ResultPage>
                     "Predicting house price...",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                   ),
+                  SizedBox(height: 16),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Text(
+                      "The server may take 40-50 seconds to start if it has been idle. Please wait...",
+                      style: TextStyle(fontSize: 15, color: Colors.grey),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ],
               ),
             );

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:house_price_predictor/formFeatures/basement/basement.dart';
 import 'package:house_price_predictor/formFeatures/buildingStyle/build_style.dart';
@@ -206,6 +208,28 @@ class _FormHandlerState extends State<FormHandler> {
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
+                      const SizedBox(height: 10),
+                      ElevatedButton.icon(
+                        icon: const Icon(Icons.close),
+                        label: const Text("Close Application"),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 24,
+                            vertical: 10,
+                          ),
+                          textStyle: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        onPressed: () {
+                          exit(
+                            0,
+                          ); // This will close the app on desktop. On mobile, it will just pop the app.
+                        },
+                      ),
                     ],
                   ),
                 ),
